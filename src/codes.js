@@ -286,34 +286,491 @@ export const placeTimezoneResult = `
 }
 `;
 
-// export const checkDistance
+export const checkDistance=` const config = {
+  method: "get",
+  url: "https://api.drivado.com/api/v1/places/checkDistance?origin=origin [ENTER ORIGIN IN QUERY]&destination=destination [ENTER DESTINATION IN QUERY]&GOOGLE_MAPS_API_KEY=GOOGLE_MAPS_API_KEY [ENTER GOOGLE_MAPS_API_KEY IN QUERY]",
+  headers: {},
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}`
 
-// export const checkDistanceResult
+export const checkDistanceResult=`{
+  "km": 32.99147,
+  "duration": "1 hour 1 min"
+}
+`
 
-// export const showVehicleWithPrice
+export const showVehicleWithPrice=`const config = {
+  method: "get",
+  url:"https://api.drivado.com/api/v1/api/apishowVehicleWithPrice?date=date [ENTER DATE IN QUERY]&km=km [ENTER KM IN QUERY]&userId=userId [ENTER USER ID  IN QUERY]&time=time [ENTER TIME IN QUERY]&sourceLatLng=sourceLatLng [ENTER SOURCE LATITUDE AND LONGITUDE IN QUERY]&destinationLatLng=destinationLatLng [ENTER DESTINATION LATITUDE AND LONGITUDE IN QUERY]",
+  headers: {},
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}
+`
 
-// export const showVehicleWithPriceResult
+export const showVehicleWithPriceResult=`{
+  "km": "32.830535999999995",
+  "vehicleWithPriceArray": [
+      {
+          "vehicleName": "Corolla",
+          "vehicleType": "STANDARD SEDAN",
+          "description": "Corolla, Toyota Prius, Camry, Ford Taurus or similar",
+          "price": 123,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680266348/vehicleImages/wqeqnbq1botsobbpuqyu.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 3,
+          "luggageCount": 2
+      },
+      {
+          "vehicleName": "E class",
+          "vehicleType": "PREMIUM SEDAN",
+          "description": "Mercedes E Class, BMW 5 Series, Audi A6, VW Passat, Lexus or similar",
+          "price": 128,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680266436/vehicleImages/q5qmj7zssf0znf77r7jy.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 3,
+          "luggageCount": 2
+      },
+      {
+          "vehicleName": "VW Caravelle",
+          "vehicleType": "ECONOMY VAN",
+          "description": "Opel Vivaro, Ford, Volkswagen Caravelle, Honda Odyssey or similar",
+          "price": 136,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680266492/vehicleImages/tiyfdlzdgffmz4aglbgp.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 5,
+          "luggageCount": 5
+      },
+      {
+          "vehicleName": "Escalade",
+          "vehicleType": "PREMIUM VAN",
+          "description": "Mercedes Viano/V Class, Cadillac Escalade, Toyota Alphard, Chevrolet Suburban, GMC or similar",
+          "price": 166,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680267172/vehicleImages/p180pdqrxvfjcr2vburt.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 5,
+          "luggageCount": 5
+      }
+  ]
+}`
 
-// export const showVehicleWithPriceHourly
+export const showVehicleWithPriceHourly=`const config = {
+  method: "get",
+  url: "https://api.drivado.com/api/v1/api/apishowVehicleWithPriceHourly?sourcePLaceId=sourcePLaceId [ENTER SOURCE PLACE ID IN QUERY]&distance=distance [ENTER distance IN QUERY]&hour=hour [ENTER HOUR IN QUERY]&date=date [ENTER DATE IN QUERY]&userId=userId [ENTER USER ID  IN QUERY]&time=time [ENTER TIME IN QUERY]&GOOGLE_MAPS_API_KEY=GOOGLE_MAPS_API_KEY [ENTER GOOGLE_MAPS_API_KEY IN QUERY]",
+  headers: {},
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}
+`
 
-// export const showVehicleWithPriceHourlyResult
+export const showVehicleWithPriceHourlyResult=`{
+  "km": "60",
+  "vehicleWithPriceArray": [
+      {
+          "vehicleName": "Corolla",
+          "vehicleType": "STANDARD SEDAN",
+          "description": "Corolla, Toyota Prius, Camry, Ford Taurus or similar",
+          "price": 180,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680266348/vehicleImages/wqeqnbq1botsobbpuqyu.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 3,
+          "luggageCount": 2
+      },
+      {
+          "vehicleName": "E class",
+          "vehicleType": "PREMIUM SEDAN",
+          "description": "Mercedes E Class, BMW 5 Series, Audi A6, VW Passat, Lexus or similar",
+          "price": 225,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680266436/vehicleImages/q5qmj7zssf0znf77r7jy.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 3,
+          "luggageCount": 2
+      },
+      {
+          "vehicleName": "Escalade",
+          "vehicleType": "PREMIUM VAN",
+          "description": "Mercedes Viano/V Class, Cadillac Escalade, Toyota Alphard, Chevrolet Suburban, GMC or similar",
+          "price": 270,
+          "image": "https://res.cloudinary.com/dspmukglv/image/upload/v1680267172/vehicleImages/p180pdqrxvfjcr2vburt.png",
+          "vehicleId": "3d8e08cd-6ffc-457b-a59b-e99206e3f7e5",
+          "unit": "USD",
+          "passengeCount": 5,
+          "luggageCount": 5
+      }
+  ]
+}`
 
-// export const bookingWithVechile
+export const bookingWithVechileBody=`{
+    "source": {
+      "placename": "Heathrow Airport (LHR), Longford, UK",
+      "placeid": "ChIJ6W3FzTRydkgRZ0H2Q1VT548",
+      "lat": "51.4700223",
+      "lng": "-0.4542955"
+  },
+  "destination": {
+      "placename": "Hilton London Metropole, Edgware Road, London, UK",
+      "placeid": "ChIJG8cTDrQadkgRQun6nrhjMfU",
+      "lat": "51.5193229",
+      "lng": "-0.1695228"
+  },
+  "userName": "techsupport@drivado.com",
+  "travelDate": "2023-02-25",
+  "travelTime": "10:16",
+  "timeZone": "Europe/London",
+  "passenger": "4",
+  "bookingType": "ONEWAY",
+  "duration":"43 mins",
+  "travelDistance":"26.875978",
+  "priceDetails":{
+      "amount":109,
+      "currency":"USD"
+  },
+  
+  "vehicle":{
+      "vehicleName":"COROLLA"
+  }
+}`
 
-// export const bookingWithVechileResult
+export const bookingWithVechile=`const data = JSON.stringify({
+  source: {
+    placename: req.body.placename,
+    placeid: req.body.placeid,
+    lat: req.body.lat,
+    lng: req.body.lng,
+  },
+  destination: {
+    placename: req.body.placename,
+    placeid: req.body.placeid,
+    lat: req.body.lat,
+    lng: req.body.lng,
+  },
+  userName: req.body.userName,
+  travelDate: req.body.travelDate,
+  travelTime: req.body.travelTime,
+  timeZone: req.body.timeZone,
+  passenger: req.body.passenger,
+  bookingType: req.body.bookingType,
+  duration: req.body.duration,
+  priceDetails: {
+    amount: req.body.amount,
+    currency: req.body.currency,
+  },
+  travelDistance: req.body.travelDistance,
+  vehicle: {
+    vehicleName: req.body.vehicleName,
+  },
+});
 
-// export const createPassenger
+const config = {
+  method: "post",
+  url: " https://api.drivado.com/api/v1/api/apibookingWithVechile ",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}`
 
-// export const createPassengerResult
+export const bookingWithVechileResult=`{
+  "source": {
+      "placename": "Heathrow Airport (LHR), Longford, UK",
+      "placeid": "ChIJ6W3FzTRydkgRZ0H2Q1VT548",
+      "lat": "51.4700223",
+      "lng": "-0.4542955"
+  },
+  "destination": {
+      "placename": "Hilton London Metropole, Edgware Road, London, UK",
+      "placeid": "ChIJG8cTDrQadkgRQun6nrhjMfU",
+      "lat": "51.5193229",
+      "lng": "-0.1695228"
+  },
+  "travelDate": "2023-02-25T00:00:00.000Z",
+  "travelTime": "10:16",
+  "duration": "43 mins",
+  "passenger": 4,
+  "bookingType": "ONEWAY",
+  "bookingId": "D0323-NNVGJ",
+  "travelDistance": 26.875978,
+  "priceDetails": {
+      "amount": 109,
+      "currency": "USD"
+  },
+  "timeZone": "Europe/London",
+  "userName": "techsupport@drivado.com",
+  "cancellationFee": "0",
+  "vehicleDetails": "63bd7cbc3f1ea637598c8d60",
+  "isSearch": true,
+  "creditCards": [],
+  "history": [],
+  "_id": "6400859214bfd4378a52097a",
+  "createdAt": "2023-03-02T11:16:34.491Z",
+  "__v": 0
+}
+`
 
-// export const bookingStatus
+export const createPassengerBody =`{
+  "firstname": "Aakash",
+  "lastname": "Banerjee",
+  "email": "akashbanerjee@email.com",
+  "phone": "6589455236",
+  "country": "India",
+  "dial_code": "+91",
+  "bookingId": "D1122-MTHY6"
+}
+`
 
-// export const bookingStatusResult
+export const createPassenger=`let data = JSON.stringify({
+  firstname: req.body.firstname,
+  lastname: req.body.lastname,
+  email: req.body.email,
+  phone: req.body.phone,
+  country: req.body.country,
+  dial_code: req.body.dial_code,
+  bookingId: req.body.bookingId,
+  flightNumber: req.body.flightOrTrain,
+  referenceNumber: req.body.reference,
+  specialRequest: req.body.specialRequest,
+});
 
-// export const paymentRequest
+const config = {
+  method: "post",
+  url: " https://api.drivado.com/api/v1/api/apipassengerCreateAndBooking ",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}`
 
-// export const paymentRequestResult
+export const createPassengerResult=`{
+  "passengerDetail": {
+      "firstName": "Aakash",
+      "lastName": "Banerjee",
+      "email": "akashbanerjee@email.com",
+      "phone": "6589455236",
+      "country": "India",
+      "code": "+91",
+      "flightNumber": null,
+      "trainNumber": null,
+      "referenceNumber": null,
+      "specialRequest": null,
+      "bookings": [],
+      "_id": "64008aa514bfd4378a52097c",
+      "createdAt": "2023-03-02T11:38:13.130Z",
+      "__v": 0
+  },
+  "updatedBooking": {
+      "source": {
+          "placename": "New York Marriott Marquis, Broadway, New York, NY, USA",
+          "placeid": "ChIJiVXoAFVYwokREqPijh-d8xg",
+          "lat": "40.7585862",
+          "lng": "-73.98582019999999"
+      },
+      "destination": {
+          "placename": "JFK Medical Center Emergency Room, James Street, Edison, NJ, USA",
+          "placeid": "ChIJCQ_LXE62w4kRyNN_KI0-wL0",
+          "lat": ""
+      },
+      "priceDetails": {
+          "amount": 135,
+          "currency": "USD"
+      },
+      "creditCards": [],
+      "history": [],
+      "_id": "63845255771baa6c9ba7a728",
+      "travelDate": "2022-11-29T00:00:00.000Z",
+      "travelTime": "12:02",
+      "travelTimeStamp": "2022-11-28T20:02:00.000Z",
+      "passenger": 2,
+      "bookingType": "ONEWAY",
+      "bookingId": "D1122-MTHY6",
+      "travelDistance": null,
+      "timeZone": "America/New_York",
+      "userName": "techsupport1@drivado.com",
+      "cancellationFee": "50",
+      "vehicleDetails": "6361151180bb35013b680b30",
+      "isSearch": true,
+      "createdAt": "2022-11-28T06:16:53.940Z",
+      "__v": 0,
+      "invoice_code_num": "DIO-264",
+      "bookingStatus": "CANCELLED",
+      "passengerDetails": "63fc9b3301e4985ec7edf813",
+      "paymentStatus": "UNPAID"
+  }
+}
+`
+export const confirmBookindAndpaymentRequestBody = `{
+  "bookingId": "D0323-N3JAD",
+  "bookingStatus": "CONFIRMED",
+  "paymentStatus": "UNPAID"
+}`
 
-// export const cancelBooking
+export const confirmBookindAndpaymentRequest=`let data = JSON.stringify({
+  bookingId: req.body.bookingId,
+  bookingStatus: req.body.bookingStatus,
+  paymentStatus: req.body.paymentStatus,
+});
 
-// export const cancelBookingResult
+const config = {
+  method: "patch",
+  url: " https://api.drivado.com/api/v1/api/apipaymentRequest ",
+  headers: {
+    Authorization:req.header("Authorization"),
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}`
+
+export const confirmBookindAndpaymentRequestResult=`"placeid": "ChIJiVXoAFVYwokREqPijh-d8xg",
+"lat": "40.7585862",
+"lng": "-73.98582019999999"
+},
+"destination": {
+"placename": "JFK Medical Center Emergency Room, James Street, Edison, NJ, USA",
+"placeid": "ChIJCQ_LXE62w4kRyNN_KI0-wL0",
+"lat": ""
+},
+"priceDetails": {
+"amount": 135,
+"currency": "USD"
+},
+"creditCards": [],
+"history": [],
+"_id": "63845255771baa6c9ba7a728",
+"travelDate": "2022-11-29T00:00:00.000Z",
+"travelTime": "12:02",
+"travelTimeStamp": "2022-11-28T20:02:00.000Z",
+"passenger": 2,
+"bookingType": "ONEWAY",
+"bookingId": "D1122-MTHY6",
+"travelDistance": null,
+"timeZone": "America/New_York",
+"userName": "techsupport1@drivado.com",
+"cancellationFee": "50",
+"vehicleDetails": "6361151180bb35013b680b30",
+"isSearch": true,
+"createdAt": "2022-11-28T06:16:53.940Z",
+"__v": 0,
+"invoice_code_num": "DIO-271",
+"bookingStatus": "CONFIRMED",
+"passengerDetails": "64008aa514bfd4378a52097c",
+"paymentStatus": "UNPAID"
+}
+`
+
+export const cancelBookingBody = `{
+  "bookingId": "D1122-MTHY6",
+  "cancellationFee": "50",
+  "bookingStatus": "CANCELLED"
+}
+`
+export const cancelBooking = `let data = JSON.stringify({
+  bookingId: req.body.bookingId,
+  bookingStatus: req.body.bookingStatus,
+  cancellationFee: req.body.cancellationFee,
+});
+
+const config = {
+  method: "patch",
+  url: " https://api.drivado.com/api/v1/api/apicancelBooking ",
+  headers: {
+    Authorization: req.header("Authorization"),
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+try {
+  const response = await axios(config);
+  console.log(JSON.stringify(response.data));
+  res.send(response.data);
+} catch (error) {
+  console.log(error);
+  res.send(error);
+}`
+
+export const cancelBookingResult=`{
+  "source": {
+      "placename": "New York Marriott Marquis, Broadway, New York, NY, USA",
+      "placeid": "ChIJiVXoAFVYwokREqPijh-d8xg",
+      "lat": "40.7585862",
+      "lng": "-73.98582019999999"
+  },
+  "destination": {
+      "placename": "JFK Medical Center Emergency Room, James Street, Edison, NJ, USA",
+      "placeid": "ChIJCQ_LXE62w4kRyNN_KI0-wL0",
+      "lat": ""
+  },
+  "priceDetails": {
+      "amount": 135,
+      "currency": "USD"
+  },
+  "creditCards": [],
+  "history": [],
+  "_id": "63845255771baa6c9ba7a728",
+  "travelDate": "2022-11-29T00:00:00.000Z",
+  "travelTime": "12:02",
+  "travelTimeStamp": "2022-11-28T20:02:00.000Z",
+  "passenger": 2,
+  "bookingType": "ONEWAY",
+  "bookingId": "D1122-MTHY6",
+  "travelDistance": null,
+  "timeZone": "America/New_York",
+  "userName": "techsupport1@drivado.com",
+  "cancellationFee": "50",
+  "vehicleDetails": "6361151180bb35013b680b30",
+  "isSearch": true,
+  "createdAt": "2022-11-28T06:16:53.940Z",
+  "__v": 0,
+  "invoice_code_num": "DIO-271",
+  "bookingStatus": "CANCELLED",
+  "passengerDetails": "64008aa514bfd4378a52097c",
+  "paymentStatus": "UNPAID"
+}
+`
