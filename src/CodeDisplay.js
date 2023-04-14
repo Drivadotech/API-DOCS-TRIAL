@@ -18,7 +18,6 @@ import {
   createPassengerBody,
   createPassengerResult,
   login,
-  loginBody,
   loginResult,
   placeTimezone,
   placeTimezoneResult,
@@ -37,7 +36,7 @@ import {
 const CodeDisplay = () => {
   return (
     <div>
-      <CodeSnippet codes={login} title="Login" />
+      <CodeSnippet codes={login.code} title="Login" />
       <CodeSnippet codes={loginResult} title="Login Result" />
       <CodeSnippet codes={accessToken} title="Access Token" />
       <CodeSnippet codes={accessTokenResult} title="Access Token Result" />

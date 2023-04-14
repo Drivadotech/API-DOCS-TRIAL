@@ -1,4 +1,6 @@
-export const login = `let data = JSON.stringify({
+export const login = {
+  
+  code:`let data = JSON.stringify({
   email: req.body.email,
   password: req.body.password,
 });
@@ -20,7 +22,7 @@ try {
   res.send(response.data);
 } catch (error) {
   console.log(error);
-  res.send(error);`;
+  res.send(error);`};
 
 export const loginBody = `{
   "email": "REGISTERED EMAIL ID",
