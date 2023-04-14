@@ -5,8 +5,8 @@ import CodeSnippet from "./CodeSnippet"
 function App() {
   return (
     <div className="App">
-      <CodeSnippet/>
-      {/* <CodeDisplay/> */}
+      {/* <CodeSnippet/> */}
+      <CodeDisplay/>
     </div>
   );
 }
