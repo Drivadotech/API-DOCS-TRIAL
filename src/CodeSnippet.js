@@ -8,7 +8,12 @@ import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
   return (
     <div>
-        <div className="">
+      <div>
+        
+      </div>
+      {/* --------------- */}
+      <div>
+      <div className="">
             <p>Example Code for {title}</p>
         </div>
 
@@ -21,6 +26,8 @@ import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
       >
         {codes}
       </SyntaxHighlighter>
+      </div>
+        
     </div>
   );
 };

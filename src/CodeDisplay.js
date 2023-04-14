@@ -14,7 +14,6 @@ import {
   confirmBookindAndpaymentRequest,
   confirmBookindAndpaymentRequestBody,
   confirmBookindAndpaymentRequestResult,
-  conformBookindAndpaymentRequestBody,
   createPassenger,
   createPassengerBody,
   createPassengerResult,
@@ -38,7 +37,6 @@ import {
 const CodeDisplay = () => {
   return (
     <div>
-      <CodeSnippet codes={loginBody} title="Login Body" />
       <CodeSnippet codes={login} title="Login" />
       <CodeSnippet codes={loginResult} title="Login Result" />
       <CodeSnippet codes={accessToken} title="Access Token" />
@@ -68,9 +66,7 @@ const CodeDisplay = () => {
       <CodeSnippet codes={confirmBookindAndpaymentRequestResult} title="Conform Booking And Pay By Invoice Result"/>
       <CodeSnippet codes={cancelBookingBody} title="Cancel Booking(Body)"/>
       <CodeSnippet codes={cancelBooking} title="Cancel Booking"/>
-      <CodeSnippet codes={cancelBookingResult} title="Cancel Booking Result"/>
-
-      
+      <CodeSnippet codes={cancelBookingResult} title="Cancel Booking Result"/> 
     </div>
   );
 };
