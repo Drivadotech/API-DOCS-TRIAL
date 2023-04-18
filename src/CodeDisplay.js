@@ -19,6 +19,7 @@ import {
   login,
   loginBody,
   loginResult,
+  main,
   placeTimezone,
   placeTimezoneResult,
   placesAutoComplete,
@@ -34,64 +35,96 @@ import {
 } from "./codes";
 import {
   CodeSnippetBody,
+  CodeSnippetGeneral,
   CodeSnippetIntro,
+  CodeSnippetIntroWithQuery,
   CodeSnippetResponse,
 } from "./CodeSnippet";
 
-import { bodyTableLogin } from "./body";
+import { bodyTableAccessToken, bodyTableLogin } from "./body";
 
 const CodeDisplay = () => {
   return (
-    <div>
-      <div className="login">
-        <CodeSnippetIntro
-          codes={login.code}
-          title="Login"
-          heading={login.heading}
-          description={login.description}
-          request_url={login.request_url}
-          requestType={login.requestType}
-        />
+    <div className="main">
+      <nav className="w-1/5 bg-blue-300">
+        <h2 className="text-xl text-slate-800 px-2 pt-5">API Docs</h2>
+      </nav>
+      {/* --------------------------------------------------- */}
+      <div className="w-4/5">
+        <div className="general information" id="general_information">
+          <CodeSnippetGeneral
+            mainHeading={main.generalInformation.mainHeading}
+            body={main.generalInformation.body}
+          />
+        </div>
 
-        <CodeSnippetBody
-          codes={loginBody.code}
-          title="Login(Body)"
-          bodyRequest={login.bodyRequest}
-          bodyTable={bodyTableLogin}
-        />
+        <div className="authentication" id="authentication">
+          <CodeSnippetGeneral
+            mainHeading={main.authentication.mainHeading}
+            body={main.authentication.body}
+          />
+        </div>
 
-        <CodeSnippetResponse
-          codes={loginResult.code}
-          title="Login Result"
-          statusCode={login.statusCode}
-          response={login.response}
-          success={login.success}
-          message={login.message}
-        />
-      </div>
+        <div className="loginRequest" id="loginRequest">
+          <CodeSnippetGeneral
+            mainHeading={main.LOGIN_REQUEST.mainHeading}
+            body={main.LOGIN_REQUEST.body}
+          />
+        </div>
 
-      {/*    
+        <div className="login" id="login_main">
+          <CodeSnippetIntro
+            codes={login.code}
+            title="Login"
+            heading={login.heading}
+            description={login.description}
+            request_url={login.request_url}
+            requestType={login.requestType}
+          />
+
+          <CodeSnippetBody
+            codes={loginBody.code}
+            title="Login(Body)"
+            bodyRequest={login.bodyRequest}
+            bodyTable={bodyTableLogin}
+          />
+
+          <CodeSnippetResponse
+            codes={loginResult.code}
+            title="Login Result"
+            statusCode={login.statusCode}
+            response={login.response}
+            success={login.success}
+            message={login.message}
+          />
+        </div>
+
+        <div className="access_token" id="access_token">
+          <CodeSnippetIntroWithQuery
+            codes={accessToken.code}
+            title="Access Token"
+            heading={accessToken.heading}
+            request_url={accessToken.request_url}
+            requestType={accessToken.requestType}
+            query={bodyTableAccessToken}
+          />
+
+          <CodeSnippetResponse
+            codes={accessTokenResult.code}
+            title="Access Token Result"
+            response={accessToken.response}
+            statusCode={accessToken.statusCode}
+          />
+
+          <CodeSnippetGeneral body={accessToken.generalMessage}/>
+        </div>
+
+        {/*    
 
 
-      <CodeSnippet codes={accessToken.code} title="Access Token" 
-      heading={}
-      request_url={}
-      requestType={}
-      bodyRequest={}
-      statusCodde={}
-      response={}
-      success={}
-      message={}/>
+      
 
-      <CodeSnippet codes={accessTokenResult.code} title="Access Token Result"
-      heading={}
-      request_url={}
-      requestType={}
-      bodyRequest={}
-      statusCodde={}
-      response={}
-      success={}
-      message={} />
+     
 
       <CodeSnippet codes={placesAutoComplete.code} title="Places Auto Complete" 
       heading={}
@@ -377,6 +410,7 @@ const CodeDisplay = () => {
        success={}
        message={}
        />  */}
+      </div>
     </div>
   );
 };

@@ -1,16 +1,31 @@
 export const main = {
-  generalInformation: `Drivado Partner API is a RESTful API organized around several resources, such as booking, vehicle, payment method, etc. Different actions for the same resource are available via different HTTP request methods.
-  `,
-  authentication: `All requests have to be made by an authenticated user only. 
-  A Drivado Account will be Created By The Drivado team so if you want to create your account contact with Drivado team and The Credentials will be given which will be required for login.`,
+  generalInformation: {
+    mainHeading:"INTRODUCTON ABOUT API",
+    body:`Drivado Partner API is a RESTful API organized around several resources, such as booking, vehicle, payment method, etc. Different actions for the same resource are available via different HTTP request methods.
+    `
+  },
+  authentication: {
+    mainHeading:"AUTHENTICATION",
+    body:`All requests have to be made by an authenticated user only. 
+    A Drivado Account will be Created By The Drivado team so if you want to create your account contact with Drivado team and The Credentials will be given which will be required for login.
+    
+    Please send us an email at  support@drivado.com, if you face any problem related to API integration.
+    
+    Once the team has registered to the Drivado System, you will be provided with the login credentials which include:
+    1. Username
+    2. Password
 
-  LOGIN_REQUEST: `You need to make this request prior to every other API request.
-  It will Mainly consist of Two APIs
-  `,
+The Login Credential will be required for Authentication.`
+  },
+
+  LOGIN_REQUEST: {
+    mainHeading:"LOGIN REQUEST",
+    body:`You need to make this request prior to every other API request. It will Mainly consist of Two APIs :`
+  },
 };
 
 export const login = {
-  heading: `LOGIN API`,
+  heading: `1. LOGIN API`,
   description:`This Api is used to Login`,
   request_url: ` https://api.drivado.com/api/v1/api/apiLogin`,
   requestType: `POST`,
@@ -46,42 +61,24 @@ try {
 };
 
 export const loginBody = {
-  heading: ``,
-  description:``,
-  request_url: ``,
-  requestType: ``,
-  bodyRequest: ``,
-  statusCodde: ``,
-  response: ``,
-  success: ``,
-  message: ``,
   code:
   `"email": "REGISTERED EMAIL ID",
 "password":"PASSWORD"`,
 };
 
 export const loginResult = {
-  heading: ``,
-  description:``,
-  request_url: ``,
-  requestType: ``,
-  bodyRequest: ``,
-  statusCodde: ``,
-  response: ``,
-  success: ``,
-  message: ``,
   code: `"success": true,
 "message": "Login Successful"`,
 };
 
 export const accessToken = {
-  heading: ``,
-  description:``,
-  request_url: ``,
-  requestType: ``,
+  heading: `2. GENERATE  ACCESS TOKEN API`,
+  description:`In response to this api you will receive an access token  on sending “email” in query params that will be used for authentication`,
+  request_url: `https://api.drivado.com/api/v1/api/apiGetAccessToken`,
+  requestType: `POST`,
   bodyRequest: ``,
-  statusCodde: ``,
-  response: ``,
+  statusCode: `200`,
+  response: `You successfully generate an “Access Token” which will be used for authentication every time an auth protected api is used`,
   success: ``,
   message: ``,
   code: `const config = {
@@ -103,18 +100,19 @@ export const accessToken = {
     res.send(error);
   }
   `,
+  generalMessage:`How To Use The Access Token?
+
+  You have to set the access token in the headers in api request  the follow manner :
+  It should be a (key,value) pair where,
+  key = the keyword "Authorization"
+  value = The access token generated
+  
+  
+  Example :
+  `
 };
 
 export const accessTokenResult = {
-heading: ``,
-description:``,
-request_url:``,
-requestType:``,
-bodyRequest:``,
-statusCodde:``,
-response:``,
-success:``,
-message:``,
 code:`{
   "success": true,
   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzg0NTIzNGYzY2NiOGRhZDQ1Mjg3ZmUiLCJpYXQiOjE2ODE0NTkzMjMsImV4cCI6MTY4MjMyMzMyM30.JcuZSOm2Km3_FD951jvaBXTuGH6KiQWoNr2f7c6GQ3U"
@@ -144,7 +142,8 @@ export const placesAutoComplete = {
   } catch (error) {
     console.log(error);
     res.send(error);
-  }`
+  }`,
+
 };
 
 export const placesAutoCompleteResult ={
